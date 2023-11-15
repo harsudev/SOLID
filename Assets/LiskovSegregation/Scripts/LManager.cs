@@ -12,5 +12,12 @@ public class LManager : MonoBehaviour
         Shape myshape3 = new Capsule();
         Shape myshape4 = new Circle();
 
+        myshape.Draw();
+        myshape2.Draw();
+        myshape3.Draw();
+        myshape4.Draw();
+        myshape3.Draw();
+
+
     }
 }

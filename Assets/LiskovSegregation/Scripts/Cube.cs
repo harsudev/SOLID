@@ -8,7 +8,6 @@ public class Cube : Shape
 
     public override void Draw()
     {
-        GameObject cubee = Instantiate(cube,transform.position,Quaternion.identity);
-        cube.transform.Rotate(0, 0, 10f);
+        Debug.Log("Draw a Cube shape");
     }
 }
