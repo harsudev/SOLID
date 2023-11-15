@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(movdir!=null)
         {
-            Debug.Log("Moving");
+           // Debug.Log("Moving");
             rb.velocity = movdir*speed*Time.deltaTime;   
         }
         else
