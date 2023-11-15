@@ -7,7 +7,8 @@ public class EnemyAi : MonoBehaviour
     [Header("Enemy Path Container")]
     public List<Transform> path=new List<Transform>();
 
-    private Rigidbody rb;   
+    private Rigidbody rb;
+    public int currentWavePoint = 0;
 
     [Header("Debug Section")]
     public GameObject sphere;
@@ -27,31 +28,24 @@ public class EnemyAi : MonoBehaviour
 
     void GenerateAiRandomPath()
     {
-        Vector3 startpos = transform.position;
+        Vector3 startPos = transform.position;
         for(int i=0;i<10;i++)
         {
-            Vector3 wavepointpos=startpos+new Vector3(Random.Range(1,10),transform.position.y,Random.Range(1,10));
-            GameObject wavepointobject = new GameObject("WavePoint" + i);
-            wavepointobject.transform.position = wavepointpos;
-            path.Add(wavepointobject.transform);
-            Instantiate(sphere, wavepointobject.transform.position, Quaternion.identity);
+            Vector3 a = new Vector3(Random.Range(0,10), 0, Random.Range(0, 10));
+            
+            GameObject pathsphere=Instantiate(sphere,new Vector3(a.x,0,a.z),Quaternion.identity);
+            path.Add(pathsphere.transform);
         }
     }
 
     void MoveEnemytoPath()
     {
-
-        if(path.Count>0)
+        Vector3 dir = path[currentWavePoint].position - transform.position;
+        while(currentWavePoint<10)
         {
-            for (int i = 0; i < path.Count; i++)
-            {
-                transform.position = Vector3.Lerp(transform.position, path[i].position, 10);
-                if(i==10)
-                {
-                    i = 0;
-                }
-            }
+            transform.Translate(dir);
         }
+        
         
     }
 }
