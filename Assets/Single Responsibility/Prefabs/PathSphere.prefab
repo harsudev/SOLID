@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 435627814096996175}
   - component: {fileID: 4340423608182820327}
   - component: {fileID: 4288944405709406290}
-  - component: {fileID: 5207882551842753084}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: PathSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,16 +133,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5207882551842753084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4301744329693894537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4aff7e397da875498844963743c97bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1000
